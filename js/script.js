@@ -55,7 +55,7 @@ function addPost(){
 		};
 	}
 
-	request.open("GET","https://kariedesign.000webhostapp.com/functions.php?title="+title+"&description="+description+"&location="+cord+,true);
+	request.open("GET","https://kariedesign.000webhostapp.com/functions.php?title="+title+"&description="+description+"&location="+cord,true);
 	request.send();
 }
 function move(){
