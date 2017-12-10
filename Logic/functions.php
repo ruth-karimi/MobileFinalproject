@@ -64,6 +64,7 @@ function addPost(){
 	$con = mysqli_connect("localhost","root","","mobilefinalproject");
 	$title = $_GET['title'];
 	$description = $_GET['description'];
+	$location = $_GET['cord'];
 	$id = uniqid("report","123456789");
 
 
