@@ -56,3 +56,12 @@ function addPost(){
 	request.open("GET","https://kariedesign.000webhostapp.com/functions.php?title="+title+"&description="+description,true);
 	request.send();
 }
+function move(){
+	window.location.assign("register.html");
+}
+
+
+function move2(){
+	window.location.assign("index.html");
+}
+
