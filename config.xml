@@ -38,7 +38,8 @@
     <!-- Plugins -->
 
     <!-- Core plugins -->
-    <plugin name="cordova-plugin-crimereporter" />
+    <plugin name="cordova-plugin-camera" />
+    <plugin name="cordova-plugin-geolocation" />
 
     <!-- Define app icon for each platform. -->
     <icon src="res/icon/location.PNG"   gap:platform="android"    gap:qualifier="ldpi" />

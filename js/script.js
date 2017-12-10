@@ -27,7 +27,6 @@ function loginUser(){
 		// alert(this.status +" and "+this.readyState);
 		if (this.status == 200 && this.readyState == 4) {
 			//document.getElementById('mes').value=this.responseText;
-			alert(this.responseText);
 			if (this.responseText === "success") {
 							alert(this.responseText);
 				window.location.assign("http://localhost/MobileWeb/Final%20Project/App/App/newPost.html");
@@ -37,4 +36,23 @@ function loginUser(){
 	request.open("GET","http://localhost/MobileWeb/Final%20Project/App/App/Logic/functions.php?email="+email+"&password="+pass,true);
 	request.send();
 
+}
+
+function addPost(){
+	var title = document.getElementById('title').value;
+	var description = document.getElementById('description').value;
+
+	var request = new XMLHttpRequest();
+
+	request.onreadystatechange = function(){
+		if (this.status == 200 && this.readyState == 4) {
+			if(this.responseText==="Report posted"){
+			alert(this.responseText);
+			};
+
+		};
+	}
+
+	request.open("GET","http://localhost/MobileWeb/Final%20Project/App/App/Logic/functions.php?title="+title+"&description="+description,true);
+	request.send();
 }

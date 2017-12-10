@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/cordova.js"></script>
         <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
 
      </head>
@@ -46,18 +47,19 @@
           <form class="px-4 py-3">
             <div class="form-group">
               <label for="exampleDropdownFormEmail1">Title</label>
-              <input type="email" class="form-control" id="email" placeholder="Title">
+              <input type="text" class="form-control" id="title" placeholder="Title">
             </div>
             <div class="form-group">
-              <label for="exampleDropdownFormPassword1">Descrption <span class="required">*</span></label>
-              <input type="password" class="form-control" id="password" placeholder="Please provide a brief description"></input>
+              <label for="exampleDropdownFormPassword1">Description <span class="required">*</span></label>
+              <input type="text" class="form-control" id="description" placeholder="Please provide a brief description"></input>
             </div>
             <div>
-              <img> 
+              <img id="img"> 
               </img>
             </div>
-            <button type="button" class="btn btn-primary">Attach Image</button>
-            <button type="button" class="btn btn-primary">Post Crime</button>
+            <button type="button" class="btn btn-primary" onclick="takePicture()">Take picture</button>
+             <button type="button" class="btn btn-primary" onclick="attachImage()">Attach Image</button>
+            <button type="button" class="btn btn-primary" onclick="addPost()">Post Crime</button>
           </form>
         <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>

@@ -7,7 +7,7 @@ elseif (isset($_GET['email']) && isset($_GET['password'])) {
 	login();
 }
 elseif (isset($_GET['title'])) {
-	uploadReport();
+	addPost();
 }
 
 
@@ -20,22 +20,22 @@ function register(){
 	$name  = $_GET['name'];
 	$password  = $_GET['password'];
 
-$query = "SELECT * FROM user WHERE email = '$email'";
-$result = mysqli_query($con,$query);
-if (mysqli_num_rows($result) >0) {
-	echo "User already exist";
-}
-else {
-	$password = password_hash($password, PASSWORD_DEFAULT);
-	$query = "INSERT INTO user(name, email, password, phonenumber, age, organization) VALUES('$name','$email','$password','$phone','$age','$org')";
+	$query = "SELECT * FROM user WHERE email = '$email'";
 	$result = mysqli_query($con,$query);
-	if ($result) {
-		echo "User created";
+	if (mysqli_num_rows($result) >0) {
+		echo "User already exist";
 	}
-	else{
-		echo "Error ".mysqli_error($con);
+	else {
+		$password = password_hash($password, PASSWORD_DEFAULT);
+		$query = "INSERT INTO user(name, email, password, phonenumber, age, organization) VALUES('$name','$email','$password','$phone','$age','$org')";
+		$result = mysqli_query($con,$query);
+		if ($result) {
+			echo "User created";
+		}
+		else{
+			echo "Error ".mysqli_error($con);
+		}
 	}
-}
 }
 
 function login(){
@@ -58,6 +58,23 @@ function login(){
 	else{
 		echo "Error ".mysqli_error($con);
 	}
+}
+
+function addPost(){
+	$con = mysqli_connect("localhost","root","","mobilefinalproject");
+	$title = $_GET['title'];
+	$description = $_GET['description'];
+	$id = uniqid("report","123456789");
+
+
+	$query = "INSERT INTO report (id,title,description) VALUES('$id','$title','$description')";
+	$result = mysqli_query($con,$query);
+		if ($result) {
+			echo "Report posted";
+		}
+		else{
+			echo "Error ".mysqli_error($con);
+		}
 }
 
 ?>
