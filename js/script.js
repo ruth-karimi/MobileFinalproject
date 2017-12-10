@@ -13,7 +13,7 @@ function registerUser() {
 			document.getElementById('mes').value=this.responseText;
 		};
 	}
-	request.open("GET","http://localhost/MobileWeb/Final%20Project/App/App/Logic/functions.php?name="+name+"&email="+email+"&password="+pass+"&org="+org+"&age="+age+"&phonenumber="+phone,true);
+	request.open("GET","https://kariedesign.000webhostapp.com/functions.php?name="+name+"&email="+email+"&password="+pass+"&org="+org+"&age="+age+"&phonenumber="+phone,true);
 	request.send();
 }
 
@@ -29,11 +29,11 @@ function loginUser(){
 			//document.getElementById('mes').value=this.responseText;
 			if (this.responseText === "success") {
 							alert(this.responseText);
-				window.location.assign("http://localhost/MobileWeb/Final%20Project/App/App/newPost.html");
+				window.location.assign("addPost.html");
 			};
 		};
 	}
-	request.open("GET","http://localhost/MobileWeb/Final%20Project/App/App/Logic/functions.php?email="+email+"&password="+pass,true);
+	request.open("GET","https://kariedesign.000webhostapp.com/functions.php?email="+email+"&password="+pass,true);
 	request.send();
 
 }
@@ -53,6 +53,6 @@ function addPost(){
 		};
 	}
 
-	request.open("GET","http://localhost/MobileWeb/Final%20Project/App/App/Logic/functions.php?title="+title+"&description="+description,true);
+	request.open("GET","https://kariedesign.000webhostapp.com/functions.php?title="+title+"&description="+description,true);
 	request.send();
 }
